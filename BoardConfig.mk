@@ -28,9 +28,6 @@ SGX_MODULES:
 
 TARGET_KERNEL_MODULES += SGX_MODULES
 
-# Graphics
-BOARD_EGL_CFG := $(DEVICE_FOLDER)/prebuilt/etc/egl.cfg
-
 # OTA Packaging / Bootimg creation
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_FOLDER)/boot.mk
 
@@ -44,4 +41,5 @@ TARGET_OTA_ASSERT_DEVICE := blaze_tablet,bowser,jem
 DEVICE_RESOLUTION := 1920x1200
 RECOVERY_TOUCHSCREEN_SWAP_XY := true
 RECOVERY_TOUCHSCREEN_FLIP_X := true
+TW_BRIGHTNESS_PATH := /sys/class/backlight/bowser/brightness
 TW_IGNORE_DEVICE := MAX44007
