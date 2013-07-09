@@ -10,6 +10,9 @@ TARGET_BOARD_OMAP_CPU := 4470
 # Kernel Build
 TARGET_KERNEL_SOURCE := kernel/amazon/bowser-common
 TARGET_KERNEL_CONFIG := jem_android_defconfig
+BOARD_KERNEL_CMDLINE := mem=1G console=/dev/null rootdelay=2 init=/init androidboot.console=ttyO2 androidboot.hardware=bowser vmalloc=384M
+# Uncomment for recovery build w/ stock kernel
+#BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 mem=1G vmalloc=256M init=/init androidboot.console=ttyO2 androidboot.hardware=bowser
 
 # Use the custom kernel toolchain to compile the external modules if one is defined
 ifneq ($(TARGET_KERNEL_CUSTOM_TOOLCHAIN),)
@@ -36,7 +39,8 @@ TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./$(DEVICE_FOLDER)/releasetools/bow
 # not tested at all
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./$(DEVICE_FOLDER)/releasetools/bowser_img_from_target_files
 
-# TWRP Config
+# Recovery/TWRP Config
+TARGET_RECOVERY_INITRC := $(DEVICE_FOLDER)/init.recovery.rc
 TARGET_OTA_ASSERT_DEVICE := blaze_tablet,bowser,jem
 DEVICE_RESOLUTION := 1920x1200
 RECOVERY_TOUCHSCREEN_SWAP_XY := true
