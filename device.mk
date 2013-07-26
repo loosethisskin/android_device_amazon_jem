@@ -7,6 +7,7 @@ $(call inherit-product, device/amazon/bowser-common/common.mk)
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_FOLDER)/overlay
 
 PRODUCT_AAPT_CONFIG := xlarge hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Rootfs
 PRODUCT_COPY_FILES += \
@@ -47,5 +48,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     hwui.render_dirty_regions=true
 
-$(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/amazon/jem/jem-vendor.mk)
