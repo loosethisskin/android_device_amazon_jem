@@ -173,4 +173,5 @@
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">8</integer>
 
+    <integer name="config_wallpaperMaxWidth">2100</integer>
 </resources>
