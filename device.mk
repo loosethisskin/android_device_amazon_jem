@@ -58,6 +58,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.cwm.forbid_format=/bootloader,/xloader,/misc \
     ro.camera.sound.forced=0
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.force.sensor.lscp.orient=1
+
 # Set dirty regions on
 PRODUCT_PROPERTY_OVERRIDES += \
     hwui.render_dirty_regions=true
